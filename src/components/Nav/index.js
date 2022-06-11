@@ -30,7 +30,7 @@ function Nav(props) {
 
   const handleResumeOpen = () => {
     window.open(
-      "public/assets/resume.pdf",
+      "https://ellysecarter.github.io/resume/assets/resume.pdf",
       "_blank"
     );
   };
@@ -121,7 +121,7 @@ function Nav(props) {
             component="div"
             sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}
           >
-            Adam Secord
+            Ellyse Carter
           </Typography>
           <Box
             sx={{
