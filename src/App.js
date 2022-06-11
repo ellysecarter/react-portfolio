@@ -1,24 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import Nav from "./components/Nav/index";
+import About from "./components/About/index";
+import Contact from "./components/Contact/index";
+import Portfolio from "./components/Portfolio/index";
+import { useState } from "react";
+import { Typography, Container, Box } from "@mui/material";
+import Footer from "./components/Footer/index";
+import "./App.css";
 
 function App() {
+  const [currentPage, setCurrentPage] = useState("About Me");
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Box
+        style={{ backgroundColor: "#0D1321" }}
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          minHeight: "50vh",
+        }}
+      >
+        <Container component="main" maxWidth="xl">
+          <Typography variant="h2" component="h1" gutterBottom>
+            <Nav currentPage={currentPage} setCurrentPage={setCurrentPage} />
+            {currentPage === "About Me" && <About />}
+            {/* {currentPage === "Contact Me" && <Contact />} */}
+            {currentPage === "Portfolio" && <Portfolio />}
+          </Typography>
+        </Container>
+        <Footer />
+      </Box>
+    </>
   );
 }
 
